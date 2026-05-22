@@ -1,0 +1,229 @@
+/* ============================================
+   FONTS
+   ============================================ */
+
+@font-face {
+    font-family: 'Mont Heavy';
+    src: url('../assets/fonts/Mont-Heavy.woff2') format('woff2'),
+        url('../assets/fonts/Mont-Heavy.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ============================================
+   VARIABLES
+   ============================================ */
+
+:root {
+    /* Couleurs sémantiques */
+    --color-bg: whitesmoke;
+    --color-text-muted: rgb(87, 87, 87);
+    --color-brand: rgb(83, 81, 128);
+    --color-brand-dark: rgb(55, 50, 143);
+    --color-overlay-alpha: 0.4;
+    --color-required: rgb(167, 4, 4);
+
+    /* Typographie */
+    --font-logo-size: 3rem;
+    --font-heading-size: 0.6rem;
+
+    /* Layout */
+    --banner-offset: 150px;
+    --content-width: 60%;
+    --field-width: 300px;
+    --section-gap: 70px;
+}
+
+/* ============================================
+   ÉLÉMENTS GLOBAUX
+   ============================================ */
+
+em {
+    font-weight: 900;
+    color: var(--color-brand);
+}
+
+h1 {
+    font-size: calc(var(--font-logo-size) / 3);
+    font-family: "Mont Heavy";
+    text-align: center;
+    color: var(--color-brand-dark);
+}
+
+/* ============================================
+   LAYOUT PRINCIPAL
+   ============================================ */
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main > div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--section-gap);
+    width: var(--content-width);
+}
+
+/* ============================================
+   COLONNE IMAGE
+   ============================================ */
+
+.img-container {
+    height: 100%;
+    width: 650px;
+    flex-shrink: 0;
+    position: relative;
+    background-image: url('../assets/images/background.jpg');
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    border-right: 1px solid var(--color-text-muted);
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+    width: 100%;
+    position: relative;
+    top: var(--banner-offset);
+    z-index: 1;
+}
+
+.banner > p {
+    font-size: var(--font-logo-size);
+    font-family: 'Mont Heavy';
+    color: white;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-text-muted);
+    opacity: var(--color-overlay-alpha);
+    z-index: -1;
+}
+
+.company-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* ============================================
+   CONTENU PRINCIPAL
+   ============================================ */
+
+.heading-text {
+    text-align: justify;
+    font-style: italic;
+    color: var(--color-text-muted);
+    font-size: var(--font-heading-size);
+}
+
+/* ============================================
+   FORMULAIRE
+   ============================================ */
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border: 1px solid var(--color-brand);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.25);
+    font-size: 0.5rem;
+}
+
+fieldset {
+    display: flex;
+    gap: 2rem;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+form legend {
+    font-weight: 900;
+    color: var(--color-brand);
+}
+
+form label {
+    cursor: pointer;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.field:has(input[required]) label::after {
+    content: " *";
+    color: var(--color-required);
+}
+
+form input {
+    width: var(--field-width);
+    padding: 4px 8px;
+    border: 1px solid var(--color-text-muted);
+    border-radius: 4px;
+}
+
+form input:focus-visible {
+    outline: 2px solid var(--color-brand-dark);
+    outline-offset: 2px;
+}
+
+form button {
+    align-self: center;
+    margin-top: 30px;
+    width: var(--field-width);
+    height: 40px;
+    border: 1px solid var(--color-brand);
+    border-radius: 1rem;
+    background-color: var(--color-brand-dark);
+    color: var(--color-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+form button:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+form button:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+}
+
+form button:focus-visible {
+    outline: 2px solid var(--color-brand-dark);
+    outline-offset: 3px;
+}
+
+form button + p {
+    align-self: center;
+    margin-top: 15px;
+}
+
+p span {
+    color: var(--color-brand-dark);
+    font-weight: 700;
+    cursor: pointer;
+}

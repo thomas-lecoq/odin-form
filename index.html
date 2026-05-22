@@ -4,10 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="./assets/icons/logo-128.png">
     <script type="module" src="js/main.js"></script>
-    <title>Document</title>
+    <title>NogriD - Login</title>
 </head>
 <body>
-    
+    <div class="img-container">
+        <div class="banner">
+            <img class="company-logo" src="./assets/images/logo-2048.png" alt="NogriD logo">
+            <p>NogriD</p>
+        </div>
+    </div>
+    <main>
+        <div>
+            <div class="heading-text">
+                Turn your data chaos into <em>clean, automated workflows</em>. No code. No formulas. No Excel nightmares.<br><br>
+                Build powerful data pipelines in minutes, automate the boring stuff, and finally <em>spend your time on what actually matters</em>, not debugging a spreadsheet that nobody understands anymore.
+            </div>
+            <div>
+                <h1>Come to the bright side of efficiency !</h1>
+                <form id="signup" action="https://httpbin.org/post" method="post">
+                    <fieldset>
+                        <legend>Your identity</legend>
+                        <div class="field">
+                            <label for="given-name">First name</label>
+                            <input type="text" id="given-name" name="given-name" required autocomplete="given-name" placeholder="John">
+                        </div>
+                        <div class="field">
+                            <label for="family-name">Last name</label>
+                            <input type="text" id="family-name" name="family-name" required autocomplete="family-name" placeholder="Doe">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Contact information</legend>
+                        <div class="field">
+                            <label for="email">email</label>
+                            <input type="email" id="email" name="email" required autocomplete="email" placeholder="john.doe@gmail.com">
+                        </div>
+                        <div class="field">
+                            <label for="tel">Phone number</label>
+                            <input type="tel" id="tel" name="tel" required autocomplete="tel" placeholder="(555) 010-0123">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Set a password</legend>
+                        <div class="field">
+                            <label for="new-password">Password</label>
+                            <input type="password" id="new-password" name="new-password" required autocomplete="new-password" placeholder="**********">
+                        </div>
+                        <div class="field">
+                            <label for="confirm-password">Confirm password</label>
+                            <input type="password" id="confirm-password" name="confirm-password" required autocomplete="new-password" placeholder="**********">
+                        </div>
+                    </fieldset>
+                    <button id="submit-btn" type="submit">Create account</button>
+                    <p>Already have an account ? <span>Log in</span></p>
+                </form>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
