@@ -28,33 +28,33 @@
                         <legend>Your identity</legend>
                         <div class="field">
                             <label for="given-name">First name</label>
-                            <input type="text" id="given-name" name="given-name" required autocomplete="given-name" placeholder="John">
+                            <input type="text" id="given-name" name="given-name" required maxlength="50" autocomplete="given-name" placeholder="John">
                         </div>
                         <div class="field">
                             <label for="family-name">Last name</label>
-                            <input type="text" id="family-name" name="family-name" required autocomplete="family-name" placeholder="Doe">
+                            <input type="text" id="family-name" name="family-name" required maxlength="50" autocomplete="family-name" placeholder="Doe">
                         </div>
                     </fieldset>
                     <fieldset>
                         <legend>Contact information</legend>
                         <div class="field">
                             <label for="email">email</label>
-                            <input type="email" id="email" name="email" required autocomplete="email" placeholder="john.doe@gmail.com">
+                            <input type="email" id="email" name="email" required autocomplete="email" maxlength="50" pattern=".+@.+" title="The mail adress must include '@'" placeholder="john.doe@gmail.com">
                         </div>
                         <div class="field">
                             <label for="tel">Phone number</label>
-                            <input type="tel" id="tel" name="tel" required autocomplete="tel" placeholder="(555) 010-0123">
+                            <input type="tel" id="tel" name="tel" required maxlength="15" autocomplete="tel" placeholder="(555) 010-0123">
                         </div>
                     </fieldset>
                     <fieldset>
                         <legend>Set a password</legend>
                         <div class="field">
                             <label for="new-password">Password</label>
-                            <input type="password" id="new-password" name="new-password" required autocomplete="new-password" placeholder="**********">
+                            <input type="password" id="new-password" name="new-password" required minlength="8" autocomplete="new-password" placeholder="**********">
                         </div>
                         <div class="field">
                             <label for="confirm-password">Confirm password</label>
-                            <input type="password" id="confirm-password" name="confirm-password" required autocomplete="new-password" placeholder="**********">
+                            <input type="password" id="confirm-password" name="confirm-password" required minlength="8" autocomplete="new-password" placeholder="**********">
                         </div>
                     </fieldset>
                     <button id="submit-btn" type="submit">Create account</button>
